@@ -1,18 +1,13 @@
 import { cn } from "@/lib/utils";
 
-interface ProcessBarProps {
-  currentStep: 'tare' | 'standard' | 'calibrate';
-  className?: string;
-}
-
-const ProcessBar = ({ currentStep, className }: ProcessBarProps) => {
+const ProcessBar = ({ currentStep, className }) => {
   const steps = [
     { id: 'tare', label: 'Tare' },
     { id: 'standard', label: 'Standard Weight' },
     { id: 'calibrate', label: 'Calibrate' }
   ];
 
-  const getStepStatus = (stepId: string) => {
+  const getStepStatus = (stepId) => {
     const currentIndex = steps.findIndex(step => step.id === currentStep);
     const stepIndex = steps.findIndex(step => step.id === stepId);
     
